@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inside the volume</title>
+  <meta name="description" content="What the caught Starship volume would feel like with people aboard. A 747 cabin, ordinary seats, a harness, and the heat-shield wall, at true scale. Ship 42 itself flew empty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#insideCanvas">Skip to the drawing</a>
+  <header class="bar">
+    <a class="brand" href="index.html">The catch, at size</a>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html">The vehicle</a>
+      <a href="inside.html" aria-current="page">Inside</a>
+    </nav>
+    <form class="height" id="heightForm">
+      <label for="heightCm">Your height</label>
+      <input id="heightCm" name="heightCm" type="number" min="100" max="220" step="1" value="175" inputmode="numeric">
+      <span>cm</span>
+    </form>
+  </header>
+
+  <main>
+    <section class="chapter" aria-labelledby="inside-title">
+      <div class="chapter-head">
+        <p class="kicker">Ship 42 flew with no one aboard</p>
+        <h1 id="inside-title">A hundred people, in the volume they caught.</h1>
+        <p>The ship is 52 metres tall and 9 metres across. SpaceX says a crew version of it can carry up to 100 people on a long flight, with private cabins, a common room, storage, a solar-storm shelter, and a viewing gallery. A lunar trip has also been described with about 12 passengers in private quarters. No seat map has been published.</p>
+        <p>So this page does not invent one. It puts things you already know into the published volume: a 747 cabin, an ordinary economy seat, a Crew Dragon, and you. Click into the ship. Each step gets closer, down to the straps and the wall.</p>
+      </div>
+
+      <div class="tool">
+        <div class="tool-bar">
+          <div class="presets" id="crumbs" role="group" aria-label="How far in you are"></div>
+          <div class="modes" id="modes" role="group" aria-label="How to board this view"></div>
+        </div>
+        <canvas id="insideCanvas" aria-label="Scale drawing of the Starship volume"></canvas>
+        <p class="stage-caption" id="insideCaption" aria-live="polite"></p>
+        <div class="presets" id="doors" role="group" aria-label="Go further in"></div>
+        <p class="hint" id="insideHint"></p>
+        <dl class="hero-facts" id="insideFacts"></dl>
+      </div>
+
+      <figure class="inside-photo">
+        <img id="insideImg" src="media/pad-01.jpg" alt="A person in a lift basket beside the stainless barrel of Super Heavy.">
+        <figcaption id="insideFig"></figcaption>
+      </figure>
+    </section>
+
+    <section class="chapter sources" aria-labelledby="inside-sources">
+      <div class="chapter-head">
+        <p class="kicker">What is published</p>
+        <h2 id="inside-sources">The cabin is described. The seat map is not.</h2>
+      </div>
+      <div class="source-columns">
+        <div>
+          <h3>SpaceX, on the crew ship</h3>
+          <ul>
+            <li>The vehicle page says Starship can carry up to 100 people on long interplanetary flights, and that a tanker is the same ship without the windows. The ship is 52 m tall and 9 m across.</li>
+            <li>The Starship Users Guide describes a crew ship for up to 100 people, with private cabins, large common areas, centralized storage, solar storm shelters, and a viewing gallery. Its payload envelope is 8 m in diameter, and an extended bay is up to 22 m tall.</li>
+            <li>A cylinder of that envelope is about 1,100 cubic metres. SpaceX has described the usable volume as about 1,000 cubic metres, including on its human-spaceflight page, where a lunar flight was listed at up to 12 passengers with private quarters.</li>
+          </ul>
+          <p><a href="https://www.spacex.com/vehicles/starship/">Vehicle page</a> · <a href="https://web.mit.edu/2.70/Reading%20Materials/SpaceX%20%20Starship_users_guide_v1.pdf">Users Guide</a> · <a href="https://web.archive.org/web/20240510002515/https://www.spacex.com/humanspaceflight/">Human spaceflight, May 2024</a></p>
+        </div>
+        <div>
+          <h3>The comparisons</h3>
+          <ul>
+            <li>Boeing’s 747-8 Intercontinental is 76.3 m long, with a cabin 6.1 m wide, and 467 seats in Boeing’s three-class reference. The main-deck ceiling is about 2.4 m on Boeing’s cabin drawings. Economy on that airplane is often 10 across, a seat about 46 cm wide and 79 cm from one seatback to the next.</li>
+            <li>Crew Dragon, on SpaceX’s vehicle page, is 4 m across and 9.3 cubic metres inside, and can carry up to 7 people. NASA flights use four seats.</li>
+            <li>Two 747 cabin cross-sections, stacked, fit inside the 8 m circle. That is geometry, not a SpaceX interior.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>This drawing, on purpose</h3>
+          <ul>
+            <li>The deck spacing, the 5-4-5 seat grid, the nine cabins, the harness, and the person-sized window are a sketch so the published numbers have a body. SpaceX has not shown that hardware.</li>
+            <li>The person in the drawings is an illustration, scaled to the height in the header. It is not a photograph of a passenger. The 747 and the Crew Dragon beside the ship are illustrations too, scaled to 76.3 m and to 8.1 m with the trunk. The 4 m circle is the published diameter.</li>
+            <li>During ascent, “down” is toward the engines. During entry the ship falls belly-first, so “down” swings toward the heat shield. A seat has to hold you for both. The mechanism is not published.</li>
+            <li>The windward wall is tile. The tile width, about 24 cm, is a photo measurement, not a SpaceX spec. Ship 42’s own page on this site is the catch, the engines, and the shield.</li>
+          </ul>
+          <p><a href="index.html">Back to the catch</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="foot">
+    <p>A personal scale study. Not a SpaceX site. The ship caught on 14 November 2026 had no passengers.</p>
+  </footer>
+  <script src="look.js"></script>
+  <script src="inside.js"></script>
+</body>
+</html>

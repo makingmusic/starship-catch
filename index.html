@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How big the catch was</title>
+  <meta name="description" content="Ship 42, caught by the Starbase tower on 14 November 2026, at true scale. SpaceX and Elon Musk photographs, with the vehicle, heat tiles, deluge, and tower measured against your height.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#zoom">Skip to the scale</a>
+  <header class="bar">
+    <a class="brand" href="#top">The catch, at size</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#familiar">Familiar</a>
+      <a href="#zoom">Scale</a>
+      <a href="#across">Across</a>
+      <a href="#tiles">Tiles</a>
+      <a href="#walk">Walk</a>
+      <a href="#seconds">18 seconds</a>
+      <a href="#water">Water</a>
+      <a href="#pictures">Pictures</a>
+      <a href="inside.html">Inside</a>
+    </nav>
+    <form class="height" id="heightForm">
+      <label for="heightCm">Your height</label>
+      <input id="heightCm" name="heightCm" type="number" min="100" max="220" step="1" value="175" inputmode="numeric">
+      <span>cm</span>
+    </form>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-photo" src="media/approach-02.jpg" alt="Ship 42, heat shield black and engines firing, held between the tower arms at Starbase.">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="kicker">Flight 15 · Ship 42 · Starbase, Texas · 14 November 2026</p>
+        <h1 id="hero-title">A tower caught a spaceship.</h1>
+        <p class="lede">The ship had been in orbit for 22 hours and 33 minutes. It came back through the heat, flipped upright, and the arms closed. From the first landing engine to the catch was 18 seconds.</p>
+        <p class="lede lede-quiet">The ship is 52 metres tall and 9 metres across. The stack it left on, booster included, is 124 metres. Set your height. The drawings below use that, and the photographs are the real ones.</p>
+        <div class="hero-actions">
+          <a class="button" href="#zoom">Stand next to it</a>
+          <a class="button button-ghost" href="inside.html">Go inside</a>
+          <a class="button button-ghost" href="#pictures">See their pictures</a>
+        </div>
+        <dl class="hero-facts" id="heroFacts"></dl>
+      </div>
+    </section>
+
+    <section class="chapter" id="familiar" aria-labelledby="familiar-title">
+      <div class="chapter-head">
+        <p class="kicker">Things you already know</p>
+        <h2 id="familiar-title">The same metre, from a bicycle to the tower.</h2>
+        <p>Move sideways along the row. Your height is the one in the header, and everything else is drawn to that same scale. The ground stays at the bottom, so the row does not scroll up and down. The height buttons change how much of that scale fits in the frame. Up close, a bicycle is large and the tower runs out the top. At tower height, you can see from the ground to the top. The ship and the tower are the published heights. The other pictures are illustrations of things you see outside: a bicycle, a door, a hoop, a car, a bus, a container, a whale, the airplane most people actually board. A football pitch is 105 m between the goals, a little shorter than Saturn V is tall.</p>
+      </div>
+      <div class="lineup-tools">
+        <div class="lineup-scale" role="group" aria-label="How much height fits in the frame">
+          <button type="button" data-lineup-m="6">Up close</button>
+          <button type="button" data-lineup-m="20">Street, 20 m</button>
+          <button type="button" data-lineup-m="60">Ship, 60 m</button>
+          <button type="button" data-lineup-m="156">Tower, 156 m</button>
+        </div>
+        <label class="slider lineup-slider">
+          <span>Height in the frame</span>
+          <input id="lineupZoom" type="range" min="0" max="1000" value="280" aria-label="Height visible in the familiar-things frame">
+          <span id="lineupZoomReadout">16 m</span>
+        </label>
+        <div class="lineup-names" id="lineupNames" role="group" aria-label="Jump to something in the row"></div>
+      </div>
+      <div class="lineup-stage">
+        <button type="button" id="lineupPrev" aria-label="Move toward the start of the row">Previous</button>
+        <div class="lineup-scroll" id="lineupScroll" tabindex="0" aria-label="Familiar things at the same scale as the ship and the tower. Scroll sideways.">
+          <canvas id="lineupCanvas"></canvas>
+        </div>
+        <button type="button" id="lineupNext" aria-label="Move toward the tower">Next</button>
+      </div>
+      <p class="stage-caption">The figure under each picture is the length it is scaled to. A 40-foot container is 2.6 m tall and a 737-800’s tail is 12.5 m; those drawings keep their own proportions instead of being squashed to both numbers. The photographs of the catch are further down.</p>
+    </section>
+
+    <section class="chapter" id="zoom" aria-labelledby="zoom-title">
+      <div class="chapter-head">
+        <p class="kicker">One instrument</p>
+        <h2 id="zoom-title">You stay the same size. The rocket does not.</h2>
+        <p>The gold figure is you. Zoom out until the whole tower fits. Zoom in until a heat tile is the size of a plate in your hands. The 9 metre body is wide enough that, up close, it stops being a rocket and becomes a wall.</p>
+      </div>
+      <div class="tool">
+        <div class="tool-bar">
+          <div class="presets" role="group" aria-label="Zoom presets">
+            <button type="button" data-preset="tile">One tile</button>
+            <button type="button" data-preset="engines">Engines</button>
+            <button type="button" data-preset="bus">A bus</button>
+            <button type="button" data-preset="ship">The ship</button>
+            <button type="button" data-preset="stack">Full stack</button>
+            <button type="button" data-preset="tower">The tower</button>
+          </div>
+          <div class="modes" role="group" aria-label="Which vehicle to draw">
+            <button type="button" data-mode="catch" aria-pressed="false">As it was caught</button>
+            <button type="button" data-mode="stack" aria-pressed="true">As it left the pad</button>
+          </div>
+        </div>
+        <div class="stage-wrap">
+          <canvas id="zoomCanvas" aria-label="Scale drawing of Starship, the tower, and a person at your height"></canvas>
+          <p class="stage-caption" id="zoomCaption"></p>
+        </div>
+        <label class="slider">
+          <span>Zoom</span>
+          <input id="zoomSlider" type="range" min="0" max="1000" value="720">
+          <span id="zoomReadout"></span>
+        </label>
+        <fieldset class="ghosts">
+          <legend>Stand these next to it</legend>
+          <label><input type="checkbox" id="ghostBus" checked> City bus, 12 m</label>
+          <label><input type="checkbox" id="ghost747"> 747-8 on its tail, 76 m</label>
+          <label><input type="checkbox" id="ghostSaturn"> Saturn V, 111 m</label>
+          <label><input type="checkbox" id="ghostLiberty"> Statue of Liberty, 93 m</label>
+        </fieldset>
+      </div>
+    </section>
+
+    <section class="chapter" id="across" aria-labelledby="across-title">
+      <div class="chapter-head">
+        <p class="kicker">Nine metres</p>
+        <h2 id="across-title">Across, not up.</h2>
+        <p>People describe the height and miss the width. The published diameter is 9 metres. A 747 cabin is 6.1 metres wide. You can stand three city buses side by side in the circle and still have room at the edges.</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <canvas id="acrossCanvas" aria-label="A 9 metre circle compared with a person, buses, and a 747 cabin"></canvas>
+          <p class="stage-caption" id="acrossCaption"></p>
+        </div>
+        <div class="panel">
+          <canvas id="engineCanvas" aria-label="Thirty-three Raptor engines inside the 9 metre base"></canvas>
+          <p class="stage-caption" id="engineCaption"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="inside-door" aria-labelledby="inside-door-title">
+      <div class="chapter-head">
+        <p class="kicker">The people</p>
+        <h2 id="inside-door-title">The ship that flew was empty. The volume is not.</h2>
+        <p>Ship 42 carried satellites. SpaceX describes a crew ship of this same size for up to 100 people, with cabins, a common room, and a viewing gallery. No seat map has been published. The next page puts ordinary airline seats into the published volume, then lets you go from the whole ship down to one harness and the wall beside it.</p>
+        <p><a class="button" href="inside.html">Go inside the volume</a></p>
+      </div>
+    </section>
+
+    <section class="chapter" id="tiles" aria-labelledby="tiles-title">
+      <div class="chapter-head">
+        <p class="kicker">The heat shield</p>
+        <h2 id="tiles-title">One plate, then the hull those plates make.</h2>
+        <p>The shield in the photographs is black. The colors here are only so each plate stays a separate object. SpaceX has described about 18,000 hexagonal tiles on the windward side. A photo measurement puts a standard tile at 24.3 cm across the flats. Ship 42 flew a newer curved tile over much of that shield. This model is the flat hexagon at that measured face. Drag it.</p>
+      </div>
+      <div class="tool">
+        <div class="tool-bar">
+          <div class="presets" role="group" aria-label="Which tile model to show">
+            <button type="button" id="tileModeOne" aria-pressed="true">One tile</button>
+            <button type="button" id="tileModeHull" aria-pressed="false">On the hull</button>
+          </div>
+        </div>
+        <canvas id="tile3d" tabindex="0" aria-label="A single heat-shield tile beside a 27 centimetre plate. Drag to turn the tile."></canvas>
+        <p class="stage-caption" id="tile3dCaption">Drag the tile to turn it.</p>
+      </div>
+      <dl class="tile-facts" id="tileFacts"></dl>
+      <div class="tool">
+        <canvas id="tileCanvas" aria-label="A flat patch of colored heat-shield tiles at true scale beside a person and a dinner plate"></canvas>
+        <p class="stage-caption" id="tileCaption">Each colored hex is one tile. Click one to lift it off the steel.</p>
+      </div>
+      <div class="note-grid">
+        <article>
+          <h3>Why a hexagon</h3>
+          <p>Elon Musk’s reason for the shape is that a hexagon leaves no straight path for hot gas to accelerate through the gaps. Square tiles would give the plasma long straight seams.</p>
+        </article>
+        <article>
+          <h3>What one tile is doing</h3>
+          <p>The ship comes home belly-first. The tiles take heat that would otherwise reach the steel. Ahead of this flight SpaceX said the shield had to be robust enough to return the ship to Starbase, and that teams had been iterating on it for this catch.</p>
+        </article>
+        <article>
+          <h3>After the catch</h3>
+          <p>On the evening of 14 November, Musk posted video from under Ship 42 and wrote “Ship 42 looks great.” The shield in that clip is the same black surface you see between the arms in the catch pictures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="chapter" id="walk" aria-labelledby="walk-title">
+      <div class="chapter-head">
+        <p class="kicker">The length</p>
+        <h2 id="walk-title">Walk it. You are not at the top yet.</h2>
+        <p>This column is the tower at true scale. Your figure stays on the screen. Scroll inside the frame. The gold line is your feet.</p>
+      </div>
+      <div class="walk-layout">
+        <aside class="walk-card" id="walkCard">
+          <p class="walk-alt" id="walkAlt">0 m</p>
+          <h3 id="walkName">The ground</h3>
+          <p id="walkText"></p>
+          <div class="walk-buttons">
+            <button type="button" id="walkCatch">The catch</button>
+            <button type="button" id="walkEngines">The engines</button>
+            <button type="button" id="walkNose">The nose</button>
+          </div>
+        </aside>
+        <div class="walk-frame">
+          <div class="walk-scroll" id="walkScroll" tabindex="0" aria-label="Scroll to walk up the tower">
+            <canvas id="walkCanvas"></canvas>
+          </div>
+          <div class="walker" id="walker" aria-hidden="true">
+            <span class="walker-tag">You</span>
+            <canvas id="walkerFig"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="seconds" aria-labelledby="seconds-title">
+      <div class="chapter-head">
+        <p class="kicker">The catch itself</p>
+        <h2 id="seconds-title">Eighteen seconds, in real time.</h2>
+        <p>Re-entry had already lasted about twenty minutes. The ship was subsonic. Then three engines lit, the vehicle flipped upright, and the engines stepped down to one. The arms closed. Press play and let the clock run. It is not sped up. The picture steps through 37 frames of <a href="https://x.com/SpaceX/status/2122355344576037338">SpaceX’s approach clip</a>, in the order they were filmed. That clip runs about half a minute, so the frames walk the whole approach while these 18 seconds run.</p>
+      </div>
+      <div class="seconds">
+        <div class="seconds-stage">
+          <img id="secondsPhoto" src="media/approach-frames/00.jpg" alt="The tower with the arms open, the first frame of SpaceX’s clip of Ship 42 coming in to be caught.">
+          <div class="seconds-clock" aria-live="polite">
+            <span id="secondsTime">0.0</span>
+            <span>seconds</span>
+          </div>
+        </div>
+        <div class="seconds-side">
+          <h3 id="secondsBeat">Three engines light</h3>
+          <p id="secondsBody">The landing burn starts. The ship is still moving, and it is about to rotate from a belly-down fall into a vertical hover.</p>
+          <input id="secondsSlider" type="range" min="0" max="180" value="0" aria-label="Landing burn time in tenths of a second">
+          <div class="seconds-actions">
+            <button type="button" id="secondsPlay">Play the 18 seconds</button>
+            <button type="button" id="secondsRestart">Back to zero</button>
+          </div>
+          <ol class="beats" id="beatList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="water" aria-labelledby="water-title">
+      <div class="chapter-head">
+        <p class="kicker">Under the rocket</p>
+        <h2 id="water-title">The water is why the pad is still there.</h2>
+        <p>On 13 November the flame diverter opened before liftoff and threw water up into 33 Raptors. The engines turned that water into the cloud in the photograph. The sketch is that moment from the side: the steel plate under the bells, the water rising into them, then the engines lighting. The first flight, on 20 April 2023, did not have this system. The concrete under the rocket was torn out. The shake you see in distant cameras is what the water did not absorb.</p>
+      </div>
+      <div class="split">
+        <figure class="photo-card" id="shakeCard">
+          <div class="shake-frame" id="shakeFrame">
+            <img src="media/liftoff-01.jpg" alt="Starship Flight 15 lifting off, with a steam cloud from the deluge spreading over the wetland.">
+          </div>
+          <figcaption>
+            Liftoff of Flight 15, posted by SpaceX. The white cloud is deluge water, flashed to steam. The water in the foreground is the real marsh.
+            <a href="https://x.com/SpaceX/status/2121437515819159871">The post</a>
+          </figcaption>
+        </figure>
+        <div class="panel water-panel">
+          <canvas id="waterCanvas" aria-label="Cutaway of the booster base held above a steel plate. Seven engine bells stand in a row. The plate has a hole under each bell."></canvas>
+          <p class="stage-caption">A cutaway sketch, not a photograph. Seven bells stand in for the 33, each drawn at 1.3 m across and 2.9 m tall on the 9 m body. You stand on the deck beside them. The plate is drawn thick so the holes stay visible. Its real thickness, and the number of holes, are not what this picture measures.</p>
+          <div class="water-actions">
+            <button type="button" id="waterButton">Open the diverter, then light the engines</button>
+          </div>
+          <label class="slider">
+            <span>How far away you are</span>
+            <input id="distanceSlider" type="range" min="150" max="8000" value="150">
+            <span id="distanceReadout">150 m</span>
+          </label>
+          <p class="stage-caption" id="shakeCaption"></p>
+        </div>
+      </div>
+      <figure class="photo-wide">
+        <img src="media/liftoff-02.jpg" alt="The base of Super Heavy at liftoff, thirty-three Raptors firing, with steam boiling up beside the tower.">
+        <figcaption>The base, from the same SpaceX liftoff set. Each Raptor is 1.3 metres across. The cluster is the full 9 metre diameter of the booster. <a href="https://x.com/SpaceX/status/2121437515819159871">The post</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="chapter" id="pictures" aria-labelledby="pictures-title">
+      <div class="chapter-head">
+        <p class="kicker">From the accounts</p>
+        <h2 id="pictures-title">What SpaceX and Elon Musk posted.</h2>
+        <p>These are their pictures and clips from X, kept in this folder so the page still works when a link rots. The words under each one are the words on the post. The photographs remain theirs.</p>
+      </div>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 14 November 2026 · 3:21 pm Central</p>
+          <h3>Mechazilla catches Starship!</h3>
+        </header>
+        <p class="post-text">Mechazilla catches Starship! Congratulations to the entire SpaceX team on this incredible achievement!</p>
+        <video controls preload="none" poster="media/approach-02.jpg">
+          <source src="media/catch.mp4" type="video/mp4">
+        </video>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2121715216597827756">x.com/SpaceX/status/2121715216597827756</a></p>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 16 November 2026</p>
+          <h3>Starship landing burn on final approach for catch</h3>
+        </header>
+        <p class="post-text">Starship landing burn on final approach for catch</p>
+        <div class="gallery">
+          <figure><img src="media/approach-01.jpg" alt="Ship 42 climbing vertically on a pink engine plume, seen from the tower structure."><figcaption>1</figcaption></figure>
+          <figure><img src="media/approach-02.jpg" alt="Ship 42 between the chopstick arms, engines firing, heat shield facing the camera."><figcaption>2</figcaption></figure>
+          <figure><img src="media/approach-03.jpg" alt="Ship 42 approaching the open arms, flame below the skirt."><figcaption>3</figcaption></figure>
+          <figure><img src="media/approach-04.jpg" alt="Aerial view of Ship 42 above the tower, with the coast, the tank farm, and the deluge tanks."><figcaption>4</figcaption></figure>
+          <figure><img src="media/approach-05.jpg" alt="Ship 42 still above the tower, a small dark shape against cloud, engines lit."><figcaption>5</figcaption></figure>
+          <figure><img src="media/approach-06.jpg" alt="Wide aerial of Starbase, two towers, and Ship 42 descending over the wetland."><figcaption>6</figcaption></figure>
+          <figure><img src="media/approach-07.jpg" alt="Ship 42 just above the chopsticks, Gulf of Mexico behind the tower."><figcaption>7</figcaption></figure>
+          <figure><img src="media/approach-08.jpg" alt="Ship 42 on the landing burn, nose up, a few lengths above the arms."><figcaption>8</figcaption></figure>
+          <figure><img src="media/approach-09.jpg" alt="Ship 42 between two towers, banking in with a long engine plume."><figcaption>9</figcaption></figure>
+        </div>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2122352509721190612">x.com/SpaceX/status/2122352509721190612</a></p>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 16 November 2026</p>
+          <h3>Starship 42 coming in for catch</h3>
+        </header>
+        <p class="post-text">Starship 42 coming in for catch</p>
+        <video controls preload="none" poster="media/approach-05.jpg">
+          <source src="media/approach.mp4" type="video/mp4">
+        </video>
+        <p class="fine">The post carried four clips. This is one of them.</p>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2122355344576037338">x.com/SpaceX/status/2122355344576037338</a></p>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 16 November 2026 · and Elon Musk the same day</p>
+          <h3>Views from Mechazilla</h3>
+        </header>
+        <p class="post-text">Views from Mechazilla of the first ever Starship catch</p>
+        <p class="post-text">Musk, quoting that post: “View of Starship landing from the tower.”</p>
+        <video controls preload="none" poster="media/tower-still.jpg">
+          <source src="media/tower.mp4" type="video/mp4">
+        </video>
+        <p class="fine">The railings in the foreground are the human-sized part. The ship hanging beside them is 52 metres.</p>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2122427170328883425">SpaceX</a> · <a href="https://x.com/elonmusk/status/2122472344052531640">Elon Musk</a></p>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>Elon Musk · 14 November 2026 · 4:36 pm and 5:25 pm Central</p>
+          <h3>Inspecting ship 42</h3>
+        </header>
+        <div class="video-pair">
+          <figure>
+            <video controls preload="none" playsinline poster="media/inspect-still.jpg">
+              <source src="media/inspect.mp4" type="video/mp4">
+            </video>
+            <figcaption>“Inspecting ship 42 right now.” The bright side is the steel that did not take the heat. The flaps and the three sea-level bells are at the skirt. <a href="https://x.com/elonmusk/status/2121733992726802703">The post</a></figcaption>
+          </figure>
+          <figure>
+            <video controls preload="none" playsinline poster="media/tiles-still.jpg">
+              <source src="media/tiles.mp4" type="video/mp4">
+            </video>
+            <figcaption>“Ship 42 looks great.” Looking up the heat shield from inside the tower. The black surface is the tile field. <a href="https://x.com/elonmusk/status/2121746382402797892">The post</a></figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 13 November 2026</p>
+          <h3>Liftoff, and the booster that did not come back</h3>
+        </header>
+        <p class="post-text">Liftoff of Starship Flight 15</p>
+        <div class="gallery gallery-wide">
+          <figure><img src="media/liftoff-01.jpg" alt="Full stack climbing out of a steam cloud over the coastal wetland."><figcaption>Liftoff</figcaption></figure>
+          <figure><img src="media/liftoff-04.jpg" alt="The full stack beside the tower, steam and flame filling the marsh."><figcaption>Stack and tower</figcaption></figure>
+          <figure><img src="media/liftoff-03.jpg" alt="Aerial view of the stack climbing beside the tower, steam over the marsh, sun low on the water."><figcaption>Over the marsh</figcaption></figure>
+          <figure><img src="media/liftoff-02.jpg" alt="Thirty-three engines at the base of the booster during liftoff."><figcaption>33 engines</figcaption></figure>
+        </div>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2121437515819159871">x.com/SpaceX/status/2121437515819159871</a></p>
+        <p class="fine">The plan was to catch the booster as well. Booster 22 was diverted and broke up over the Gulf. The ship catch the next afternoon was the first time an orbital upper stage was caught.</p>
+      </article>
+
+      <article class="post">
+        <header>
+          <p>SpaceX · 10 November 2026</p>
+          <h3>The booster, with a person in the frame</h3>
+        </header>
+        <p class="post-text">Super Heavy moved to the launch pad at Starbase. Booster 22 is the first Super Heavy V3 booster planned to return to the launch site for catch and was used for final catch testing upon arrival, including a suspended squeeze test at catch height.</p>
+        <div class="gallery">
+          <figure><img src="media/pad-01.jpg" alt="A person in a lift basket beside the stainless barrel of Super Heavy. The person is tiny against one tank section."><figcaption>Person in the basket</figcaption></figure>
+          <figure><img src="media/pad-02.jpg" alt="Looking down on the top of the booster at night, grid-fin hardware and the tower crown, city lights on the horizon."><figcaption>Top of the booster</figcaption></figure>
+          <figure><img src="media/pad-03.jpg" alt="Looking up at the thirty-three Raptor bells of Booster 22 beside the tower at night."><figcaption>The engine cluster</figcaption></figure>
+        </div>
+        <p class="post-link"><a href="https://x.com/SpaceX/status/2120220290219208884">x.com/SpaceX/status/2120220290219208884</a></p>
+      </article>
+    </section>
+
+    <section class="chapter sources" id="sources" aria-labelledby="sources-title">
+      <div class="chapter-head">
+        <p class="kicker">What is measured</p>
+        <h2 id="sources-title">Numbers, and what they are not.</h2>
+      </div>
+      <div class="source-columns">
+        <div>
+          <h3>From SpaceX’s vehicle page</h3>
+          <ul>
+            <li>Full stack 124 m tall, 9 m in diameter, more than 100 tonnes of payload when reused.</li>
+            <li>Ship 52 m tall, 1,600 tonnes of propellant, 1,614 tonnes of thrust, six engines: three Raptor and three Raptor Vacuum.</li>
+            <li>Super Heavy 72 m tall, 3,650 tonnes of propellant, 8,240 tonnes of thrust, 33 Raptors. Thirteen of those steer. Twenty ring the rim.</li>
+            <li>Each Raptor: 1.3 m across, 2.9 m tall, 250 tonnes of thrust.</li>
+          </ul>
+          <p><a href="https://www.spacex.com/vehicles/starship/">spacex.com/vehicles/starship</a></p>
+        </div>
+        <div>
+          <h3>The flight</h3>
+          <ul>
+            <li>Launch 13 November 2026, 22:47 UTC, 4:47 pm Central, from Orbital Launch Pad 2. Booster 22 and Ship 42.</li>
+            <li>About 275 to 278 km, roughly 14 orbits, 26 Starlink V3 satellites.</li>
+            <li>Caught 14 November 2026 at about 3:20 pm Central. Mission time 22 hours, 32 minutes, 32 seconds.</li>
+            <li>The booster was not caught on this flight.</li>
+          </ul>
+          <p><a href="https://en.wikipedia.org/wiki/Starship_flight_15">Wikipedia, Starship flight 15</a>, cross-checked with the SpaceX posts above.</p>
+        </div>
+        <div>
+          <h3>Drawn, not measured</h3>
+          <ul>
+            <li>The tower is drawn at 146 m, the height widely reported for the Starbase orbital launch tower. SpaceX’s vehicle page does not print that number. The tower’s width, the arm position, the nose shape, and the flap stations are a sketch, so the photograph remains the authority for how the catch looked.</li>
+            <li>Tile width of 24.3 cm across the flats is the figure these drawings use, from an independent photo measurement near 24.4 cm discussed on NASASpaceflight’s forum, not a SpaceX drawing. Corner to corner that hexagon is 28.1 cm, and the face is about 511 cm². The count of about 18,000 is SpaceX’s own figure from an earlier flight broadcast. A community estimate puts the thickness near 3.3 cm. SpaceX does not print that thickness, and the back of a tile is partly hollow, so a solid 1.7 litres overstates the ceramic. The colors are a diagram. The shield in the photographs is black.</li>
+            <li>The landing-burn steps, about 18 seconds from three engines to the catch, follow a published reconstruction of this flight’s timeline. The catch clock itself is the 3:20 pm Central time above. The frames in that player are taken in order from SpaceX’s approach clip, which runs about half a minute. They are not each matched to a measured instant of the burn.</li>
+            <li>The shake slider is an illustration of falloff with distance. It is not a seismometer record. South Padre Island is about five miles, 8 km, from the pad.</li>
+            <li>The diverter picture is a side cutaway. The bells use the published Raptor size, 1.3 m by 2.9 m, and seven of them are drawn so each one stays readable. The real base has 33. The plate is drawn thick, and the holes are lined up under the bells, so the path of the water is obvious. Plate thickness and hole count are not measured here.</li>
+            <li>A city bus here is a typical 12 m bus, 2.55 m wide and 3.1 m tall. A car in the mass comparison is 1.6 tonnes. Those are references, not vehicles on the pad.</li>
+            <li>The familiar-things row uses illustrations, not photographs. Each one is scaled to the length printed under it. A bicycle is about 1.8 m. A front door is a typical 2 m by 0.9 m. A basketball rim is at 3.05 m, with a backboard 1.83 m wide. A family car is about 4.8 m, not one model. An adult male giraffe reaches about 5.5 m. A London double-decker is about 11.2 m long and 4.4 m tall. A 40-foot container is 12.2 m long and 2.6 m high; the drawing is scaled to the length, so it stands a little taller than 2.6 m. A blue whale here is a typical adult of about 25 m. The longest measured were nearer 30 m.</li>
+            <li>A Boeing 737-800 is 39.5 m long and its tail is 12.5 m. Scaled to the length, the drawing’s tail is a little under 12.5 m. The 747-8 is 76.3 m long and the tail is about 19.4 m. Scaled to the length, this drawing’s tail is about 19.7 m. Saturn V is scaled to 110.6 m. Liberty is scaled to 93 m from the ground to the torch, pedestal included. The pool in that row is the 50 m length and the 2 m depth. The 25 m width is not in the side view.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="colophon">Comparisons use a Boeing 747-8 length of 76.3 m and a cabin width of 6.1 m, a Saturn V of 110.6 m by 10.1 m with about 7.6 million pounds of first-stage thrust and a liftoff mass near 2,950 tonnes, and a Statue of Liberty of 93 m from the ground to the torch. An Olympic pool is taken as 50 by 25 by 2 metres, 2,500 tonnes of water.</p>
+    </section>
+  </main>
+  <footer class="foot">
+    <p>Photographs and video by SpaceX and Elon Musk, posted on X in November 2026. This page is a personal scale study. It is not a SpaceX site.</p>
+  </footer>
+  <script src="look.js"></script>
+  <script src="app.js"></script>
+  <script src="tile3d.js"></script>
+</body>
+</html>
